@@ -9,17 +9,12 @@ typedef struct {
 } entry_t;
 
 int is_valid_part_one(const entry_t* entry) {
-  int ccount = 0;
+  int n = 0;
   char* s = entry->s;
   for (size_t i = 0; i < strlen(s); ++i) {
-    if (s[i] == entry->c) {
-      ccount++;
-    }
+    n += s[i] == entry->c;
   }
-  if (ccount >= entry->min && ccount <= entry->max) {
-    return 1;
-  }
-  return 0;
+  return n >= entry->min && n <= entry->max;
 }
 
 int is_valid_part_two(const entry_t* entry) {
@@ -27,10 +22,6 @@ int is_valid_part_two(const entry_t* entry) {
   int t1 = s[entry->min - 1] == entry->c;
   int t2 = s[entry->max - 1] == entry->c;
   return (t1 + t2) == 1;
-}
-
-void print_entry(const entry_t* entry) {
-  printf("%d-%d %c: %s\n", entry->min, entry->max, entry->c, entry->s);
 }
 
 int main(int argc, char *argv[]) {

@@ -1,4 +1,4 @@
-all: day1 day2 day3
+all: day1 day2 day3 day4
 	-@echo "Done"
 
 day1: day1.c
@@ -10,7 +10,10 @@ day2: day2.c
 day3: day3.c
 	cc day3.c -o day3
 
+day4: day4.c
+	cc day4.c -o day4
+
 .PHONY: clean all
 
 clean:
-	rm -f day1 day2 day3
+	rm -f day1 day2 day3 day4

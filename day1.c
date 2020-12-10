@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   /* read all the ints */
   FILE* f;
   int value;
-  f = fopen("day1.dat", "r");
+  f = fopen("data/day1.dat", "r");
   int i = 0;
   while (fscanf(f, "%d", &value) == 1) {
     all[i] = value;

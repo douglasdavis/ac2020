@@ -37,7 +37,7 @@ int get_id(const char* linep) {
 
 int main() {
   FILE* f;
-  f = fopen("day5.dat", "r");
+  f = fopen("data/day5.dat", "r");
   char line[16];
   int row;
   int col;

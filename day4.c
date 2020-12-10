@@ -22,7 +22,7 @@ int check_if_good(const char* line) {
 
 int main(int argc, char *argv[]) {
   FILE* f;
-  f = fopen("day4.dat", "r");
+  f = fopen("data/day4.dat", "r");
   char* line;
   char input_line[128];
   int n_good = 0;

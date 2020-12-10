@@ -105,7 +105,7 @@ def values_check(passport):
 
 
 def main():
-    input_file = Path("day4.dat")
+    input_file = Path("data/day4.dat")
     passports = input_file.read_text().split("\n\n")
     n_good1 = 0
     n_good2 = 0

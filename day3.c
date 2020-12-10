@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
   FILE* f;
-  f = fopen("day3.dat", "r");
+  f = fopen("data/day3.dat", "r");
   int irow = 0;
   int ntree = 0;
   char in_row[N];

@@ -1,14 +1,9 @@
 #include <stdio.h>
 
-int get_val(const char* linep,
-            size_t start_idx,
-            size_t end_idx,
-            int lo,
-            int hi,
-            char up_char,
-            char dn_char) {
-  int val;
-  int div;
+int get_val(const char* linep, size_t start_idx, size_t end_idx,
+            int lo, int hi, char up_char, char dn_char) {
+  int val = -1;
+  int div = -1;
   char c;
   for (int i = start_idx; i < end_idx; ++i) {
     c = linep[i];
@@ -39,8 +34,6 @@ int main() {
   FILE* f;
   f = fopen("data/day5.dat", "r");
   char line[16];
-  int row;
-  int col;
   int maxid = 0;
   int seatid;
   int seats[861] = {0};

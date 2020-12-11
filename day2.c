@@ -29,7 +29,6 @@ int main(int argc, char *argv[]) {
   int total_good2 = 0;
   FILE* f;
   f = fopen("data/day2.dat", "r");
-  int i = 0;
   int min;
   int max;
   char c;

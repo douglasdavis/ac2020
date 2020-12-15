@@ -2,7 +2,7 @@ CC := cc
 CFLAGS := -O3 -mtune=native -march=native -std=c99 -Wall
 
 
-all: day1 day2 day3 day5 day6
+all: day1 day2 day3 day5 day6 day8
 	-@echo "Done"
 
 day1: day1.c
@@ -20,7 +20,10 @@ day5: day5.c
 day6: day6.c
 	$(CC) $(CFLAGS) day6.c -o day6
 
+day8: day8.c
+	$(CC) $(CFLAGS) day8.c -o day8
+
 .PHONY: clean all
 
 clean:
-	rm -f day1 day2 day3 day5 day6
+	rm -f day1 day2 day3 day5 day6 day8

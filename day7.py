@@ -3,23 +3,23 @@
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Set, Tuple
+from typing import Set, Tuple, List, Dict, Iterable, Union
 
 
 @dataclass
 class Bag:
     name: str
-    children: Set[Tuple[int, str]] = field(default_factory=set, init=False)
-    descendants: Set[Tuple[int, str]] = field(default_factory=set, init=False, repr=False)
+    children: Set[Tuple[str, int]] = field(default_factory=set, init=False)
+    descendants: Set[Tuple[str, int]] = field(default_factory=set, init=False, repr=False)
 
-    def has_childen(self):
+    def has_childen(self) -> bool:
         return len(self.children) > 0
 
-    def has_desired(self):
+    def has_desired(self) -> bool:
         return "shiny_gold" in [p[0] for p in self.descendants]
 
 
-def get_insides(line):
+def get_insides(line: str) -> Tuple[str, List[Tuple[str, int]]]:
     cut = line.strip().split(" bags contain ")
     key = cut[0].replace(" ", "_")
     raw = line.strip().split(" bags contain ")[1]
@@ -30,11 +30,11 @@ def get_insides(line):
     return key, fixed
 
 
-def part1(d):
+def part1(d: Dict[str, Bag]) -> int:
     return sum([v.has_desired() for k, v in d.items()])
 
 
-def unroll(d, names):
+def unroll(d: Dict[str, Bag], names: Iterable[str]) -> List[str]:
     result = []
     for name in names:
         for subbag in d[name].children:
@@ -42,17 +42,12 @@ def unroll(d, names):
     return result
 
 
-def part2(d):
+def part2(d: Dict[str, Bag]) -> int:
     unrolled = []
-    running = True
-    iteration = 0
+    running = ["shiny_gold"]
     while running:
-        if iteration == 0:
-            running = unroll(d, ["shiny_gold"])
-        else:
-            running = unroll(d, running)
+        running = unroll(d, running)
         unrolled += running
-        iteration += 1
     return len(unrolled)
 
 
@@ -76,6 +71,7 @@ def main():
 
     print("part 1:", part1(dicted))
     print("part 2:", part2(dicted))
+
 
 if __name__ == "__main__":
     main()

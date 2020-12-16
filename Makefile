@@ -1,5 +1,5 @@
 CC := cc
-CFLAGS := -O3 -mtune=native -march=native -std=c99 -Wall
+CFLAGS := -O2 -mtune=native -march=native -std=c99 -Wall
 
 
 all: day1 day2 day3 day5 day6 day8

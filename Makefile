@@ -3,7 +3,7 @@ CXX := c++
 CFLAGS := -O2 -mtune=native -march=native -std=c99 -Wall
 CXXFLAGS := -O2 -mtune=native -march=native -std=c++17 -Wall
 
-all: day01 day02 day03 day05 day06 day08 day09
+all: day01 day02 day03 day05 day06 day08 day09 day10
 	-@echo "Done"
 
 day01: day01.c
@@ -27,7 +27,10 @@ day08: day08.c
 day09: day09.cpp
 	$(CXX) $(CXXFLAGS) day09.cpp -o day09
 
+day10: day10.cpp
+	$(CXX) $(CXXFLAGS) day10.cpp -o day10
+
 .PHONY: clean all
 
 clean:
-	rm -f day01 day02 day03 day05 day06 day08 day09
+	rm -f day01 day02 day03 day05 day06 day08 day09 day10

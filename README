@@ -1,4 +1,5 @@
 Advent of Code 2020
 
 Prioritizing C but falling back to Python or C++ if the string
-manipulation gets a little too wild.
+manipulation gets a little too wild or I the STL becomes too useful to
+ignore.

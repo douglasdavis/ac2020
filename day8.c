@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -84,19 +85,19 @@ int main() {
 
   int accumulator = 0;
   run_program2(ops, nums, hits, &accumulator);
-  printf("Part 1 Accumulator: %d\n", accumulator);
+  printf("Part 1: %d\n", accumulator);
 
   for (int i = 0; i < 633; ++i) {
     if (ops[i] == JMP) {
       ops[i] = NOP;
       int rp = run_program2(ops, nums, hits, &accumulator);
-      if (rp == 1) printf("part2: %d\n", accumulator);
+      if (rp == 1) printf("Part 2: %d\n", accumulator);
       ops[i] = JMP;
     }
     else if (ops[i] == NOP) {
       ops[i] = JMP;
       int rp = run_program2(ops, nums, hits, &accumulator);
-      if (rp == 1) printf("part2: %d\n", accumulator);
+      if (rp == 1) printf("Part 2: %d\n", accumulator);
       ops[i] = NOP;
     }
   }

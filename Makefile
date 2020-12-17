@@ -1,29 +1,33 @@
 CC := cc
+CXX := c++
 CFLAGS := -O2 -mtune=native -march=native -std=c99 -Wall
+CXXFLAGS := -O2 -mtune=native -march=native -std=c++17 -Wall
 
-
-all: day1 day2 day3 day5 day6 day8
+all: day01 day02 day03 day05 day06 day08 day09
 	-@echo "Done"
 
-day1: day1.c
-	$(CC) $(CFLAGS) day1.c -o day1
+day01: day01.c
+	$(CC) $(CFLAGS) day01.c -o day01
 
-day2: day2.c
-	$(CC) $(CFLAGS) day2.c -o day2
+day02: day02.c
+	$(CC) $(CFLAGS) day02.c -o day02
 
-day3: day3.c
-	$(CC) $(CFLAGS) day3.c -o day3
+day03: day03.c
+	$(CC) $(CFLAGS) day03.c -o day03
 
-day5: day5.c
-	$(CC) $(CFLAGS) day5.c -o day5
+day05: day05.c
+	$(CC) $(CFLAGS) day05.c -o day05
 
-day6: day6.c
-	$(CC) $(CFLAGS) day6.c -o day6
+day06: day06.c
+	$(CC) $(CFLAGS) day06.c -o day06
 
-day8: day8.c
-	$(CC) $(CFLAGS) day8.c -o day8
+day08: day08.c
+	$(CC) $(CFLAGS) day08.c -o day08
+
+day09: day09.cpp
+	$(CXX) $(CXXFLAGS) day09.cpp -o day09
 
 .PHONY: clean all
 
 clean:
-	rm -f day1 day2 day3 day5 day6 day8
+	rm -f day01 day02 day03 day05 day06 day08 day09

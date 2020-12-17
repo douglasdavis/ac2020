@@ -60,6 +60,7 @@ int main() {
     auto res = std::find(std::begin(stc), std::end(stc), v[i]);
     if (res == std::end(stc)) {
       invalid_number = v[i];
+      break;
     }
   }
   std::cout << "Part 1: " << invalid_number << std::endl;
